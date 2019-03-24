@@ -147,6 +147,223 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-dom操作--操作属性,方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/gentle-veg.github.io/dom操作--操作属性,方法/">dom操作--操作属性,方法</a>
+    </h1>
+  
+
+        
+        <a href="/gentle-veg.github.io/dom操作--操作属性,方法/" class="archive-article-date">
+  	<time datetime="2019-03-24T14:23:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HTML-DOM-是："><a href="#HTML-DOM-是：" class="headerlink" title="HTML DOM 是："></a>HTML DOM 是：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML 的标准对象模型</span><br><span class="line">HTML 的标准编程接口( HTML 元素被定义为对象，而编程接口则是对象方法和对象属性)</span><br><span class="line">W3C 标准</span><br></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>url: html文档位置</li>
+<li>title: 文档标题</li>
+<li>images: html中图片</li>
+<li>form表单: html表单<br>body标签: html中的标签</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//文档标题,可以修改标题</span><br><span class="line">document.write=&quot;hello&quot;; </span><br><span class="line">//获取所有表单</span><br><span class="line">console.log(document.forms);</span><br><span class="line">//获取所有图片</span><br><span class="line">console.log(document.images);</span><br><span class="line">//获取body</span><br><span class="line">console.log(document.body);</span><br></pre></td></tr></table></figure>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><strong>1.获取方法</strong></p>
+<ul>
+<li><p>1.通过id获取(只获取一个元素)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;id名&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.通过标签名获取(结果是数组)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementsByTagName(&quot;标签&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.通过类名获取(结果是数组)–ie9及以上识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementsByClassName(&quot;类名&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.通过name属性获取(结果是数组)–常用于表单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementsByName()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.通过css选择器获取(只获取一个元素)–ie8及以上识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.querySelect(&quot;css选择器&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6.通过css选择器获取(结果是一个数组)–ie8及以上识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.querySelectAll(&quot;css选择器&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="修改元素内容"><a href="#修改元素内容" class="headerlink" title="修改元素内容"></a>修改元素内容</h4><ul>
+<li><ol>
+<li>innerHTML–1识别标签,2可以访问,可以修改<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.innerHTML=&apos;修改后的结果&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>innerText–输出纯文本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.innerText=&apos;修改后的结果&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>textContent–输出纯文本,保留文本格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.textContent=&apos;修改后的结果&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h3><h4 id="1-通过修改类名—ie9以下不能用"><a href="#1-通过修改类名—ie9以下不能用" class="headerlink" title="1.通过修改类名—ie9以下不能用"></a>1.通过修改类名—ie9以下不能用</h4><ul>
+<li><p>1.通过className获取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">元素.className=&apos;类名 //会覆盖原有的类名</span><br><span class="line">元素.className+=&apos;类名&apos; //类不会覆盖,只会叠加</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.通过classList属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">元素.classList.add(&apos;类名&apos;)//添加类名,不覆盖原有类名</span><br><span class="line">元素.classList.remove(&apos;类名&apos;)//移除类名</span><br><span class="line">元素.classList.contain(&apos;类名&apos;)//判断类名是否存在,有true,没有false</span><br><span class="line">元素.classList.toggle(&apos;类名&apos;)//添加或删除类名,有删除,没有添加</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-通过行内style样式"><a href="#2-通过行内style样式" class="headerlink" title="2.通过行内style样式"></a>2.通过行内style样式</h4><p>元素.style.样式名=’样式值’</p>
+<h4 id="3-通过操作属性"><a href="#3-通过操作属性" class="headerlink" title="3.通过操作属性"></a>3.通过操作属性</h4><ul>
+<li><p>1.原生属性–本身具有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.属性名=&apos;属性值&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.自定义属性–自己定义的(原生的属性也可以使用)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">元素.setAttribute(&apos;属性名&apos;,&apos;属性值&apos;)//设置属性</span><br><span class="line">元素.getAttribute(&apos;属性名&apos;)//设置属性</span><br><span class="line">元素.removeAttribute(&apos;属性名&apos;)//移除属性</span><br><span class="line">元素.hasAttribute(&apos;属性名&apos;)//判断属性是否存在(boolean类型,用于条件判断)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dom</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/gentle-veg.github.io/dom操作--操作属性,方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-dom简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/gentle-veg.github.io/dom简介/">什么是dom</a>
+    </h1>
+  
+
+        
+        <a href="/gentle-veg.github.io/dom简介/" class="archive-article-date">
+  	<time datetime="2019-03-24T14:04:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>js以事件驱动为核心的语言</strong><br><strong>dom:文档对象模型</strong></p>
+<p><strong>dom操作三要素</strong></p>
+<ul>
+<li>1.事件源</li>
+<li>2.事件 </li>
+<li>3.事件驱动程序</li>
+</ul>
+<h4 id="dom操作三部曲"><a href="#dom操作三部曲" class="headerlink" title="dom操作三部曲"></a>dom操作三部曲</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">获取事件源</span><br><span class="line">绑定事件</span><br><span class="line">书写事件驱动程序</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dom</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/gentle-veg.github.io/dom简介/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue2-0基础-钩子函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,7 +524,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>dom</p>
+
       
 
       
@@ -671,7 +889,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">dom</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -679,11 +897,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue2.0基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue2.0基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue工具</a>
               </li>
             
             <div class="clearfix"></div>
