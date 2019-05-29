@@ -19,7 +19,6 @@
 
 
 <meta name="description" content="成为独挡一面的web工程师">
-<meta name="keywords" content="世界上只有两种动物可以到达金字塔的顶端,一种是大雁,一种是蜗牛,我们大部分人都是蜗牛">
 <meta property="og:type" content="website">
 <meta property="og:title" content="hmj个人博客(hexo)">
 <meta property="og:url" content="https://gentle-veg.github.io/index.html">
@@ -78,7 +77,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -102,14 +101,23 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/img/icon.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">hmj</a></h1>
         </hgroup>
 
         
+        <p class="header-subtitle">世界上只有两种动物可以到达金字塔的顶端,一种是大雁,一种是蜗牛</p>
+        
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
         
 
 
@@ -163,7 +171,7 @@
                         
                             <li><a href="/">主页</a></li>
                         
-                            <li><a href="/archives/">所有文章</a></li>
+                            <li><a href="/archives/">时间轴</a></li>
                         
                             <li><a href="/tags/">标签云</a></li>
                         
@@ -187,7 +195,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据传递/">数据传递</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo主题/">hexo主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据传递/">数据传递</a></li></ul>
                     </div>
                 </section>
                 
@@ -227,18 +235,20 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/img/icon.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">hmj</a></h1>
             </hgroup>
+            
+            <p class="header-subtitle">世界上只有两种动物可以到达金字塔的顶端,一种是大雁,一种是蜗牛</p>
             
             <nav class="header-menu">
                 <ul>
                 
                     <li><a href="/">主页</a></li>
                 
-                    <li><a href="/archives/">所有文章</a></li>
+                    <li><a href="/archives/">时间轴</a></li>
                 
                     <li><a href="/tags/">标签云</a></li>
                 
@@ -263,6 +273,135 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo主题-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/hexo主题-1/" class="article-date">
+      <time datetime="2019-05-29T11:43:29.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/hexo主题-1/">hexo主题--基础设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="2-hexo基础设置"><a href="#2-hexo基础设置" class="headerlink" title="2 hexo基础设置"></a>2 hexo基础设置</h2><h3 id="2-1个人图像"><a href="#2-1个人图像" class="headerlink" title="2.1个人图像"></a>2.1个人图像</h3><h4 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h4><p>默认头像存储于 yelee/source/img/icon.png</p>
+<h4 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h4><p>avatar: /img/icon.png</p>
+<h3 id="2-2-文章摘要"><a href="#2-2-文章摘要" class="headerlink" title="2.2 文章摘要"></a>2.2 文章摘要</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一: "></a>方法一:
+          
+      
+    </h4></div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo主题/">hexo主题</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/29/hexo主题-1/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo主题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/hexo主题/" class="article-date">
+      <time datetime="2019-05-29T07:22:24.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/hexo主题/">hexo主题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="1开始使用"><a href="#1开始使用" class="headerlink" title="1开始使用"></a>1开始使用</h2><h3 id="1-1-更改主题"><a href="#1-1-更改主题" class="headerlink" title="1.1 更改主题"></a>1.1 更改主题</h3><h4 id="通过地址github下载-安装"><a href="#通过地址github下载-安装" class="headerlink" title="通过地址github下载,安装"></a>通过地址github下载,安装</h4><p>git clone <a href="https://github.com/MOxFIVE/hexo-theme-yelee.git" target="_blank" rel="noopener">https://github.com/MOxFIVE/hexo-theme-yelee.git</a> themes/yelee</p>
+<h4 id="修改config-yml中的主题"><a href="#修改config-yml中的主题" class="headerlink" title="修改config.yml中的主题"></a>修改config.yml中的主题</h4><p>theme:Yelee;</p>
+<h4 id="主题更新"><a href="#主题更新" class="headerlink" title="主题更新"></a>主题更新</h4><p>cd themes/yelee<br>git pull</p>
+<h3 id="1-2-语言切换-theme-yelee-config-yml"><a href="#1-2-语言切换-theme-yelee-config-yml" class="headerlink" title="1.2 语言切换(theme/yelee/_config.yml)"></a>1.2 语言切换(theme/yelee/_config.yml)</h3><p>language: zh-Hans</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo主题/">hexo主题</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-小程序简介" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -619,6 +758,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue基础/">vue基础</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -887,13 +1030,17 @@
 
   
   
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2019 hmj
+                2019 hmj
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
