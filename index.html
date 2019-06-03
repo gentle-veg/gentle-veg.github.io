@@ -36,7 +36,7 @@
 
 
 
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 
 
 
@@ -77,7 +77,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -111,6 +111,13 @@
         <p class="header-subtitle">世界上只有两种动物可以到达金字塔的顶端,一种是大雁,一种是蜗牛</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
         
 
 
@@ -164,9 +171,7 @@
                         
                             <li><a href="/">主页</a></li>
                         
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/随笔">随笔</a></li>
+                            <li><a href="/archives/">时间轴</a></li>
                         
                             <li><a href="/tags/">标签云</a></li>
                         
@@ -177,11 +182,15 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa 新浪微博" href="/sina weibo" title="新浪微博"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 简书" href="/jianshu" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="/" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="/" title="Coding"></a>
                             
                         </ul>
                     </nav>
@@ -190,7 +199,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo主题/">hexo主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据传递/">数据传递</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo主题/">hexo主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
                     </div>
                 </section>
                 
@@ -199,11 +208,9 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                      <a class="main-nav-link switch-friends-link" href="http://gentle-veg.github.io/">hexo</a>
                     
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/MOxFIVE/hexo-theme-yelee">yelee主题</a>
                     
                     </div>
                 </section>
@@ -213,7 +220,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">成为前端架构师</div>
                 </section>
                 
             </div>
@@ -243,9 +250,7 @@
                 
                     <li><a href="/">主页</a></li>
                 
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/随笔">随笔</a></li>
+                    <li><a href="/archives/">时间轴</a></li>
                 
                     <li><a href="/tags/">标签云</a></li>
                 
@@ -257,11 +262,15 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa 新浪微博" target="_blank" href="/sina weibo" title="新浪微博"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 简书" target="_blank" href="/jianshu" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="/" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="/" title="Coding"></a>
                             
                         </ul>
             </nav>
@@ -270,69 +279,6 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
-  
-    <article id="post-hexo主题2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/29/hexo主题2/" class="article-date">
-      <time datetime="2019-05-29T12:17:26.000Z" itemprop="datePublished">2019-05-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/hexo主题2/">hexo主题2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="2-hexo基础设置"><a href="#2-hexo基础设置" class="headerlink" title="2 hexo基础设置"></a>2 hexo基础设置</h2><h3 id="2-1个人图像"><a href="#2-1个人图像" class="headerlink" title="2.1个人图像"></a>2.1个人图像</h3><h4 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h4><p>默认头像存储于 yelee/source/img/icon.png</p>
-<h4 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h4><p>avatar: /img/icon.png</p>
-<h3 id="2-2-主菜单-theme-yelee-config-yml"><a href="#2-2-主菜单-theme-yelee-config-yml" class="headerlink" title="2.2 主菜单(theme/yelee/_config.yml)"></a>2.2 主菜单(theme/yelee/_config.yml)</h3><p>menu:<br>  主页: /<br>  所有文章: /archives/<br>  标签云: /tags/<br>  关于我: /about/</p>
-<h3 id="2-3-文章摘要"><a href="#2-3-文章摘要" class="headerlink" title="2.3 文章摘要"></a>2.3 文章摘要</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一: "></a>方法一:
-          
-      
-    </h4></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2019/05/29/hexo主题2/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
   
     <article id="post-hexo主题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -363,13 +309,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="1-hexo开始使用"><a href="#1-hexo开始使用" class="headerlink" title="1 hexo开始使用"></a>1 hexo开始使用</h2><h3 id="1-1-更改主题"><a href="#1-1-更改主题" class="headerlink" title="1.1 更改主题"></a>1.1 更改主题</h3><h4 id="通过地址github下载-安装"><a href="#通过地址github下载-安装" class="headerlink" title="通过地址github下载,安装"></a>通过地址github下载,安装</h4><p>git clone <a href="https://github.com/MOxFIVE/hexo-theme-yelee.git" target="_blank" rel="noopener">https://github.com/MOxFIVE/hexo-theme-yelee.git</a> themes/yelee</p>
+              <h2 id="hexo开始使用"><a href="#hexo开始使用" class="headerlink" title="hexo开始使用"></a>hexo开始使用</h2><h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><h4 id="通过地址github下载-安装"><a href="#通过地址github下载-安装" class="headerlink" title="通过地址github下载,安装"></a>通过地址github下载,安装</h4><p>git clone <a href="https://github.com/MOxFIVE/hexo-theme-yelee.git" target="_blank" rel="noopener">https://github.com/MOxFIVE/hexo-theme-yelee.git</a> themes/yelee</p>
 <h4 id="修改config-yml中的主题"><a href="#修改config-yml中的主题" class="headerlink" title="修改config.yml中的主题"></a>修改config.yml中的主题</h4><p>theme:Yelee;</p>
 <h4 id="主题更新"><a href="#主题更新" class="headerlink" title="主题更新"></a>主题更新</h4><p>cd themes/yelee<br>git pull</p>
-<h3 id="1-2-语言切换-theme-yelee-config-yml"><a href="#1-2-语言切换-theme-yelee-config-yml" class="headerlink" title="1.2 语言切换(theme/yelee/_config.yml)"></a>1.2 语言切换(theme/yelee/_config.yml)</h3><p>language: zh-Hans</p>
-
+<h3 id="语言切换-theme-yelee-config-yml"><a href="#语言切换-theme-yelee-config-yml" class="headerlink" title="语言切换(theme/yelee/_config.yml)"></a>语言切换(theme/yelee/_config.yml)</h3><p>language: zh-Hans</p>
+<h2 id="hexo基础设置"><a href="#hexo基础设置" class="headerlink" title="hexo基础设置"></a>hexo基础设置</h2><h3 id="个人图像"><a href="#个人图像" class="headerlink" title="个人图像"></a>个人图像</h3><h4 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h4><p>默认头像存储于 yelee/source/img/icon.png</p>
+<h4 id="默认路径"><a href="#默认路径" class="headerlink" title="默认路径"></a>默认路径</h4><p>avatar: /img/icon.png</p>
+<h3 id="主菜单-theme-yelee-config-yml"><a href="#主菜单-theme-yelee-config-yml" class="headerlink" title="主菜单(theme/yelee/_config.yml)"></a>主菜单(theme/yelee/_config.yml)</h3><p>menu:<br>  主页: /<br>  所有文章: /archives/<br>  标签云: /tags/<br>  关于我: /about/</p>
+<h3 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一: "></a>方法一:
+          
       
-    </div>
+    </h4></div>
     
     <div class="article-info article-info-index">
       
@@ -380,6 +330,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo主题/">hexo主题</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/05/29/hexo主题/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -426,11 +380,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="小程序"><a href="#小程序" class="headerlink" title="小程序:"></a>小程序:</h4><ul>
+        <h3 id="小程序"><a href="#小程序" class="headerlink" title="小程序:"></a>小程序:</h3><ul>
 <li>支付宝小程序(自己开发)</li>
 <li>微信小程序(提供了外部接口)</li>
 </ul>
-<h4 id="小程序的特点"><a href="#小程序的特点" class="headerlink" title="小程序的特点"></a>小程序的特点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">适合使用频率低的应用</span><br><span class="line">适合简单的用完即走的应用</span><br><span class="line">适合性能要求不高的应用</span><br></pre></td></tr></table></figure>
+<h3 id="小程序的特点"><a href="#小程序的特点" class="headerlink" title="小程序的特点"></a>小程序的特点</h3><ul>
+<li>适合使用频率低的应用</li>
+<li>适合简单的用完即走的应用</li>
+<li>适合性能要求不高的应用</li>
+</ul>
+
       
     </div>
     
@@ -773,66 +732,6 @@
 
 
   
-    <article id="post-ajax的用法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/20/ajax的用法/" class="article-date">
-      <time datetime="2019-03-20T11:24:07.000Z" itemprop="datePublished">2019-03-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/20/ajax的用法/">ajax的用法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>dom</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据传递/">数据传递</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-vue-devtools" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -862,26 +761,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="1vue-devtools的安装"><a href="#1vue-devtools的安装" class="headerlink" title="1vue-devtools的安装"></a>1vue-devtools的安装</h4><ul>
-<li><p>1.在github下载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/vuejs/vue-devtools</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.用你的npm中进入该文件夹下</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i  //添加依赖</span><br><span class="line">npm run build   //没有执行，文件夹shells&gt;chrome&gt;src文件夹</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3修改shells&gt;chrome&gt;mainifest.json</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;background&quot;: &#123;</span><br><span class="line">       &quot;scripts&quot;: [</span><br><span class="line">         &quot;build/background.js&quot;</span><br><span class="line">       ],</span><br><span class="line">       &quot;persistent&quot;: true</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>4.谷歌浏览器的扩展程序功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加载已解压的扩展程序,选择将文件夹中shells&gt;chorme,</span><br><span class="line">勾选开发者模式，</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>优缺点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">缺点: 第二步执行起来很慢</span><br><span class="line">优点: 有利于组件化开发</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+        <h2 id="vue-devtools"><a href="#vue-devtools" class="headerlink" title="vue-devtools"></a>vue-devtools</h2><h4 id="在github下载："><a href="#在github下载：" class="headerlink" title="在github下载："></a>在github下载：</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/vuejs/vue-devtools</span><br></pre></td></tr></table></figure>
+<h4 id="用你的npm中进入该文件夹下"><a href="#用你的npm中进入该文件夹下" class="headerlink" title="用你的npm中进入该文件夹下"></a>用你的npm中进入该文件夹下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i  //添加依赖</span><br><span class="line">npm run build   //没有执行，文件夹shells&gt;chrome&gt;src文件夹</span><br></pre></td></tr></table></figure>
+<h4 id="修改shells-gt-chrome-gt-mainifest-json"><a href="#修改shells-gt-chrome-gt-mainifest-json" class="headerlink" title="修改shells&gt;chrome&gt;mainifest.json"></a>修改shells&gt;chrome&gt;mainifest.json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;background&quot;: &#123;</span><br><span class="line">       &quot;scripts&quot;: [</span><br><span class="line">         &quot;build/background.js&quot;</span><br><span class="line">       ],</span><br><span class="line">       &quot;persistent&quot;: true</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="谷歌浏览器的扩展程序功能"><a href="#谷歌浏览器的扩展程序功能" class="headerlink" title="谷歌浏览器的扩展程序功能"></a>谷歌浏览器的扩展程序功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加载已解压的扩展程序,选择将文件夹中shells&gt;chorme,</span><br><span class="line">勾选开发者模式，</span><br></pre></td></tr></table></figure>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">缺点: 第二步执行起来很慢</span><br><span class="line">优点: 有利于组件化开发</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -1024,17 +908,13 @@
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2019 hmj
+                2019 hmj
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

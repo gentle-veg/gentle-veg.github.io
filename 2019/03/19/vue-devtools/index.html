@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="1vue-devtools的安装 1.在github下载： 1git clone  https://github.com/vuejs/vue-devtools  2.用你的npm中进入该文件夹下   12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹  3修改shells&amp;gt;chrome&amp;gt;mainifes">
+<meta name="description" content="vue-devtools在github下载： 1git clone  https://github.com/vuejs/vue-devtools 用你的npm中进入该文件夹下12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹 修改shells&amp;gt;chrome&amp;gt;mainifest.json123456&amp;qu">
 <meta name="keywords" content="vue工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-devtools">
 <meta property="og:url" content="https://gentle-veg.github.io/2019/03/19/vue-devtools/index.html">
 <meta property="og:site_name" content="hmj个人博客(hexo)">
-<meta property="og:description" content="1vue-devtools的安装 1.在github下载： 1git clone  https://github.com/vuejs/vue-devtools  2.用你的npm中进入该文件夹下   12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹  3修改shells&amp;gt;chrome&amp;gt;mainifes">
+<meta property="og:description" content="vue-devtools在github下载： 1git clone  https://github.com/vuejs/vue-devtools 用你的npm中进入该文件夹下12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹 修改shells&amp;gt;chrome&amp;gt;mainifest.json123456&amp;qu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T16:59:14.341Z">
+<meta property="og:updated_time" content="2019-06-03T08:14:42.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-devtools">
-<meta name="twitter:description" content="1vue-devtools的安装 1.在github下载： 1git clone  https://github.com/vuejs/vue-devtools  2.用你的npm中进入该文件夹下   12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹  3修改shells&amp;gt;chrome&amp;gt;mainifes">
+<meta name="twitter:description" content="vue-devtools在github下载： 1git clone  https://github.com/vuejs/vue-devtools 用你的npm中进入该文件夹下12npm i  //添加依赖npm run build   //没有执行，文件夹shells&amp;gt;chrome&amp;gt;src文件夹 修改shells&amp;gt;chrome&amp;gt;mainifest.json123456&amp;qu">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -35,7 +35,7 @@
 
 
 
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 
 
 
@@ -74,7 +74,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -108,6 +108,13 @@
         <p class="header-subtitle">世界上只有两种动物可以到达金字塔的顶端,一种是大雁,一种是蜗牛</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
         
 
 
@@ -161,9 +168,7 @@
                         
                             <li><a href="/">主页</a></li>
                         
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/随笔">随笔</a></li>
+                            <li><a href="/archives/">时间轴</a></li>
                         
                             <li><a href="/tags/">标签云</a></li>
                         
@@ -174,11 +179,15 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa 新浪微博" href="/sina weibo" title="新浪微博"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 简书" href="/jianshu" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="/" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="/" title="Coding"></a>
                             
                         </ul>
                     </nav>
@@ -187,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo主题/">hexo主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据传递/">数据传递</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo主题/">hexo主题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo博客/">hexo博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0基础/">vue2.0基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue工具/">vue工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li></ul>
                     </div>
                 </section>
                 
@@ -196,11 +205,9 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                      <a class="main-nav-link switch-friends-link" href="http://gentle-veg.github.io/">hexo</a>
                     
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/MOxFIVE/hexo-theme-yelee">yelee主题</a>
                     
                     </div>
                 </section>
@@ -210,7 +217,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">成为前端架构师</div>
                 </section>
                 
             </div>
@@ -240,9 +247,7 @@
                 
                     <li><a href="/">主页</a></li>
                 
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/随笔">随笔</a></li>
+                    <li><a href="/archives/">时间轴</a></li>
                 
                     <li><a href="/tags/">标签云</a></li>
                 
@@ -254,11 +259,15 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa 新浪微博" target="_blank" href="/sina weibo" title="新浪微博"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                                <a class="fa 简书" target="_blank" href="/jianshu" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="/" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="/" title="Coding"></a>
                             
                         </ul>
             </nav>
@@ -306,26 +315,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="1vue-devtools的安装"><a href="#1vue-devtools的安装" class="headerlink" title="1vue-devtools的安装"></a>1vue-devtools的安装</h4><ul>
-<li><p>1.在github下载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/vuejs/vue-devtools</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.用你的npm中进入该文件夹下</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i  //添加依赖</span><br><span class="line">npm run build   //没有执行，文件夹shells&gt;chrome&gt;src文件夹</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3修改shells&gt;chrome&gt;mainifest.json</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;background&quot;: &#123;</span><br><span class="line">       &quot;scripts&quot;: [</span><br><span class="line">         &quot;build/background.js&quot;</span><br><span class="line">       ],</span><br><span class="line">       &quot;persistent&quot;: true</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>4.谷歌浏览器的扩展程序功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加载已解压的扩展程序,选择将文件夹中shells&gt;chorme,</span><br><span class="line">勾选开发者模式，</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>优缺点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">缺点: 第二步执行起来很慢</span><br><span class="line">优点: 有利于组件化开发</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+        <h2 id="vue-devtools"><a href="#vue-devtools" class="headerlink" title="vue-devtools"></a>vue-devtools</h2><h4 id="在github下载："><a href="#在github下载：" class="headerlink" title="在github下载："></a>在github下载：</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/vuejs/vue-devtools</span><br></pre></td></tr></table></figure>
+<h4 id="用你的npm中进入该文件夹下"><a href="#用你的npm中进入该文件夹下" class="headerlink" title="用你的npm中进入该文件夹下"></a>用你的npm中进入该文件夹下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i  //添加依赖</span><br><span class="line">npm run build   //没有执行，文件夹shells&gt;chrome&gt;src文件夹</span><br></pre></td></tr></table></figure>
+<h4 id="修改shells-gt-chrome-gt-mainifest-json"><a href="#修改shells-gt-chrome-gt-mainifest-json" class="headerlink" title="修改shells&gt;chrome&gt;mainifest.json"></a>修改shells&gt;chrome&gt;mainifest.json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;background&quot;: &#123;</span><br><span class="line">       &quot;scripts&quot;: [</span><br><span class="line">         &quot;build/background.js&quot;</span><br><span class="line">       ],</span><br><span class="line">       &quot;persistent&quot;: true</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="谷歌浏览器的扩展程序功能"><a href="#谷歌浏览器的扩展程序功能" class="headerlink" title="谷歌浏览器的扩展程序功能"></a>谷歌浏览器的扩展程序功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加载已解压的扩展程序,选择将文件夹中shells&gt;chorme,</span><br><span class="line">勾选开发者模式，</span><br></pre></td></tr></table></figure>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">缺点: 第二步执行起来很慢</span><br><span class="line">优点: 有利于组件化开发</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -336,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2019/03/19/vue-devtools/">vue-devtools</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">hmj</a></p>
         <p><span>发布时间:</span>2019-03-19, 23:08:59</p>
-        <p><span>最后更新:</span>2019-03-20, 00:59:14</p>
+        <p><span>最后更新:</span>2019-06-03, 16:14:42</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/03/19/vue-devtools/" title="vue-devtools">https://gentle-veg.github.io/2019/03/19/vue-devtools/</a>
             <span class="copy-path" data-clipboard-text="原文: https://gentle-veg.github.io/2019/03/19/vue-devtools/　　作者: hmj" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -352,8 +346,8 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/20/ajax的用法/">
-                    ajax的用法
+                <a href="/2019/03/20/vue-react-angular对比/">
+                    vue,react,angular对比
                 </a>
             </div>
         
@@ -372,7 +366,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1vue-devtools的安装"><span class="toc-number">1.</span> <span class="toc-text">1vue-devtools的安装</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-devtools"><span class="toc-number">1.</span> <span class="toc-text">vue-devtools</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在github下载："><span class="toc-number">1.0.1.</span> <span class="toc-text">在github下载：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用你的npm中进入该文件夹下"><span class="toc-number">1.0.2.</span> <span class="toc-text">用你的npm中进入该文件夹下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改shells-gt-chrome-gt-mainifest-json"><span class="toc-number">1.0.3.</span> <span class="toc-text">修改shells&gt;chrome&gt;mainifest.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#谷歌浏览器的扩展程序功能"><span class="toc-number">1.0.4.</span> <span class="toc-text">谷歌浏览器的扩展程序功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优缺点"><span class="toc-number">1.0.5.</span> <span class="toc-text">优缺点</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -394,31 +388,6 @@
 
 
 
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"vue-devtools　| hmj个人博客(hexo)　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
 
 
     
@@ -428,7 +397,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/20/ajax的用法/" title="上一篇: ajax的用法">
+            <a href="/2019/03/20/vue-react-angular对比/" title="上一篇: vue,react,angular对比">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -442,7 +411,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/hexo主题2/">hexo主题2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/hexo主题/">hexo主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/小程序简介/">小程序简介</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/dom操作--操作属性,方法/">dom操作--操作属性,方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/dom简介/">什么是dom</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/20/vue2-0基础-钩子函数/">vue2.0基础(钩子函数)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/20/vue-react-angular对比/">vue,react,angular对比</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/20/ajax的用法/">ajax的用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/vue-devtools/">vue-devtools</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/hexo博客的搭建/">hexo博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/03/pages/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/hexo主题/">hexo主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/小程序简介/">小程序简介</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/dom操作--操作属性,方法/">dom操作--操作属性,方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/24/dom简介/">什么是dom</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/20/vue2-0基础-钩子函数/">vue2.0基础(钩子函数)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/20/vue-react-angular对比/">vue,react,angular对比</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/vue-devtools/">vue-devtools</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/hexo博客的搭建/">hexo博客的搭建</a></li></ul>
 
 
 
@@ -456,7 +425,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2019 hmj
+                2019 hmj
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
