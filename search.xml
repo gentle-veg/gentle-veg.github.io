@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>js基础语法</title>
+      <link href="/2019/06/13/js%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+      <url>/2019/06/13/js%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h2><h3 id="js历史"><a href="#js历史" class="headerlink" title="js历史"></a>js历史</h3><h4 id="js的来源"><a href="#js的来源" class="headerlink" title="js的来源"></a>js的来源</h4><h4 id="W3C标准"><a href="#W3C标准" class="headerlink" title="W3C标准"></a>W3C标准</h4><ul><li>结构标准=&gt;html</li><li>表现标准=&gt;css</li><li>行为标准=&gt;js</li></ul><h4 id="今天js承担的责任"><a href="#今天js承担的责任" class="headerlink" title="今天js承担的责任"></a>今天js承担的责任</h4><h3 id="js组成部分"><a href="#js组成部分" class="headerlink" title="js组成部分"></a>js组成部分</h3><h3 id="js的特点"><a href="#js的特点" class="headerlink" title="js的特点"></a>js的特点</h3><p>简单易用<br>解释执行<br>解释执行和编译执行==&gt;转化为.dll文件可执行文件</p><h3 id="使用范围"><a href="#使用范围" class="headerlink" title="使用范围"></a>使用范围</h3><p>表单验证<br>轮播特效<br>开发游戏</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>bom</title>
       <link href="/2019/06/07/bom/"/>
       <url>/2019/06/07/bom/</url>
